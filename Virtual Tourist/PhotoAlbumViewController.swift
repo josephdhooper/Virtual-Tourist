@@ -28,6 +28,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let annotation = MKPointAnnotation()
         annotation.coordinate = pin!.getCoordinate()
         let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
@@ -53,15 +54,14 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let itemWidth = floor((collectionView.frame.size.width - 2)/3)
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
+        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 2
         
-        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        let width = floor(self.collectionView.frame.size.width/3) - layout.minimumLineSpacing
+        layout.itemSize = CGSize(width: width, height: width)
         
-        collectionView.reloadData()
         collectionView.collectionViewLayout = layout
         
     }
