@@ -11,8 +11,6 @@ import UIKit
 
 class Photo : NSManagedObject {
     
-    
-    
     @NSManaged var id: String
     @NSManaged var imageUrl: String
     @NSManaged var localPath: String
@@ -42,8 +40,7 @@ class Photo : NSManagedObject {
         
         set {
             FlickrClient.Caches.imageCache.storeImage(newValue, withPath: id)
-        
-        
+            
         }
     }
     
