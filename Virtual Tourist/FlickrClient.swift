@@ -10,6 +10,8 @@ import Foundation
 
 class FlickrClient : NSObject {
     
+    // "THE ONE LINE SINGLETON (NOW WITH PROOF!") See: http://krakendev.io/blog/the-right-way-to-write-a-singleton
+    
     static let sharedInstance  = FlickrClient()
     private override init() { }
 
@@ -163,13 +165,6 @@ class FlickrClient : NSObject {
         }
         task.resume()
     }
-    
-//    class func sharedInstance() -> FlickrClient {
-//        struct Singleton {
-//            static var sharedInstance = FlickrClient()
-//        }
-//        return Singleton.sharedInstance
-
 
     func createBoundingBoxString(latitude: Double, longitude: Double) -> String {
         let bottom_left_lon = max(longitude - Parameters.BOUNDING_BOX_HALF_WIDTH, Parameters.LON_MIN)

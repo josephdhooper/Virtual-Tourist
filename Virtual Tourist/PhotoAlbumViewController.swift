@@ -43,6 +43,10 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
         } catch {
             showError("Failed to fetch results controller.")
         }
+        
+        if let documentsPath = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first?.path {
+            print(documentsPath)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -53,7 +57,8 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-    
+        
+        
         let itemWidth = floor((collectionView.frame.size.width - 1)/3)
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -62,14 +67,11 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
         
         layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         
-//        collectionView.reloadData()
-        collectionView.collectionViewLayout = layout
         collectionView.reloadData()
-
-        
+        collectionView.collectionViewLayout = layout
+    
     }
     
-
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: "Photo")
         fetchRequest.sortDescriptors = []

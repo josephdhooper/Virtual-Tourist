@@ -10,8 +10,8 @@ import UIKit
 
 class PhotoCell: UICollectionViewCell {
    
+    @IBOutlet weak var placeholderView: UIView!
     @IBOutlet weak var imageView: UIImageView!
-
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+
 }

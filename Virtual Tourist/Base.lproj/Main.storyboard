@@ -111,72 +111,93 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="3Rq-9l-utD">
-                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="PhotoCell" id="5vS-wN-TME" customClass="PhotoCell" customModule="Virtual_Tourist" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="5vS-wN-TME" customClass="PhotoCell" customModule="Virtual_Tourist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Re1-7q-mtg">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RJ-tC-Whh" userLabel="PlaceHolder">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                </imageView>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="NpU-bf-sei">
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NpU-bf-sei">
                                                     <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                                 </activityIndicatorView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Re1-7q-mtg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerX" secondItem="9RJ-tC-Whh" secondAttribute="centerX" id="FFd-7I-SY5"/>
                                             <constraint firstAttribute="trailing" secondItem="Re1-7q-mtg" secondAttribute="trailing" id="HHo-4r-YRb"/>
                                             <constraint firstItem="Re1-7q-mtg" firstAttribute="leading" secondItem="5vS-wN-TME" secondAttribute="leading" id="Ij9-hI-RN0"/>
-                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerY" secondItem="5vS-wN-TME" secondAttribute="centerY" id="M3b-vB-c8X">
-                                                <variation key="widthClass=compact" constant="0.0"/>
-                                            </constraint>
-                                            <constraint firstItem="Re1-7q-mtg" firstAttribute="centerX" secondItem="NpU-bf-sei" secondAttribute="centerX" id="Nsm-cv-jFh"/>
+                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerY" secondItem="Re1-7q-mtg" secondAttribute="centerY" id="KQ5-w7-xaF"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="top" secondItem="Re1-7q-mtg" secondAttribute="top" id="M35-JS-dlB"/>
+                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerY" secondItem="9RJ-tC-Whh" secondAttribute="centerY" id="WS7-eI-5P9"/>
                                             <constraint firstItem="Re1-7q-mtg" firstAttribute="top" secondItem="5vS-wN-TME" secondAttribute="top" id="YCw-N3-o4P"/>
+                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerX" secondItem="9RJ-tC-Whh" secondAttribute="centerX" id="Zok-Sg-IIb"/>
+                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerY" secondItem="9RJ-tC-Whh" secondAttribute="centerY" id="hHo-ju-ofE"/>
+                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerX" secondItem="Re1-7q-mtg" secondAttribute="centerX" id="jrX-3f-rCv"/>
                                             <constraint firstAttribute="bottom" secondItem="Re1-7q-mtg" secondAttribute="bottom" id="kYL-fM-WWC">
                                                 <variation key="widthClass=compact" constant="0.0"/>
                                             </constraint>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="leading" secondItem="Re1-7q-mtg" secondAttribute="leading" id="n0e-QT-Wlr"/>
                                         </constraints>
-                                        <size key="customSize" width="150" height="150"/>
                                         <variation key="default">
                                             <mask key="subviews">
+                                                <exclude reference="9RJ-tC-Whh"/>
                                                 <exclude reference="Re1-7q-mtg"/>
-                                                <exclude reference="NpU-bf-sei"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="M3b-vB-c8X"/>
+                                                <exclude reference="M35-JS-dlB"/>
+                                                <exclude reference="n0e-QT-Wlr"/>
                                                 <exclude reference="HHo-4r-YRb"/>
                                                 <exclude reference="Ij9-hI-RN0"/>
-                                                <exclude reference="Nsm-cv-jFh"/>
                                                 <exclude reference="YCw-N3-o4P"/>
                                                 <exclude reference="kYL-fM-WWC"/>
+                                                <exclude reference="FFd-7I-SY5"/>
+                                                <exclude reference="KQ5-w7-xaF"/>
+                                                <exclude reference="WS7-eI-5P9"/>
+                                                <exclude reference="Zok-Sg-IIb"/>
+                                                <exclude reference="hHo-ju-ofE"/>
+                                                <exclude reference="jrX-3f-rCv"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
                                             <mask key="subviews">
-                                                <include reference="Re1-7q-mtg"/>
+                                                <include reference="9RJ-tC-Whh"/>
                                                 <include reference="NpU-bf-sei"/>
+                                                <include reference="Re1-7q-mtg"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="M3b-vB-c8X"/>
+                                                <include reference="M35-JS-dlB"/>
+                                                <include reference="n0e-QT-Wlr"/>
                                                 <include reference="HHo-4r-YRb"/>
                                                 <include reference="Ij9-hI-RN0"/>
-                                                <include reference="Nsm-cv-jFh"/>
                                                 <include reference="YCw-N3-o4P"/>
                                                 <include reference="kYL-fM-WWC"/>
+                                                <include reference="FFd-7I-SY5"/>
+                                                <include reference="KQ5-w7-xaF"/>
+                                                <include reference="WS7-eI-5P9"/>
+                                                <include reference="Zok-Sg-IIb"/>
+                                                <include reference="hHo-ju-ofE"/>
+                                                <include reference="jrX-3f-rCv"/>
                                             </mask>
                                         </variation>
                                         <connections>
                                             <outlet property="activityIndicator" destination="NpU-bf-sei" id="gKM-Dg-ZWS"/>
                                             <outlet property="imageView" destination="Re1-7q-mtg" id="l9z-MO-hpJ"/>
+                                            <outlet property="placeholderView" destination="9RJ-tC-Whh" id="OWf-OQ-Gu2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -243,7 +264,7 @@
                             <mask key="constraints">
                                 <include reference="dQh-Xl-HAN"/>
                                 <include reference="SlY-XK-EjJ"/>
-                                <include reference="w75-zU-mle"/>
+                                <exclude reference="w75-zU-mle"/>
                                 <include reference="N6E-Ix-jzf"/>
                                 <include reference="ade-Yo-wa9"/>
                                 <include reference="juR-Aa-VEa"/>
@@ -272,7 +293,4 @@
             <point key="canvasLocation" x="789" y="215"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="placeholder.png" width="300" height="300"/>
-    </resources>
 </document>
