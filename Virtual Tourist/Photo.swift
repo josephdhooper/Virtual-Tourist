@@ -11,6 +11,8 @@ import UIKit
 
 class Photo : NSManagedObject {
     
+    
+    
     @NSManaged var id: String
     @NSManaged var imageUrl: String
     @NSManaged var localPath: String
@@ -35,10 +37,13 @@ class Photo : NSManagedObject {
     
     var photoImage: UIImage? {
         get {
-            return FlickrClient.Caches.imageCache.imageWithPath(localPath)
+            return FlickrClient.Caches.imageCache.imageWithPath(id)
         }
+        
         set {
-            FlickrClient.Caches.imageCache.storeImage(newValue, withPath: localPath)
+            FlickrClient.Caches.imageCache.storeImage(newValue, withPath: id)
+        
+        
         }
     }
     

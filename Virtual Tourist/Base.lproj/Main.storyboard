@@ -111,7 +111,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="3Rq-9l-utD">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -121,7 +121,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Re1-7q-mtg">
@@ -145,7 +145,7 @@
                                                 <variation key="widthClass=compact" constant="0.0"/>
                                             </constraint>
                                         </constraints>
-                                        <size key="customSize" width="100" height="100"/>
+                                        <size key="customSize" width="150" height="150"/>
                                         <variation key="default">
                                             <mask key="subviews">
                                                 <exclude reference="Re1-7q-mtg"/>
@@ -221,17 +221,17 @@
                                 <exclude reference="AuA-SX-WAB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="dQh-Xl-HAN"/>
+                                <exclude reference="SlY-XK-EjJ"/>
+                                <exclude reference="w75-zU-mle"/>
+                                <exclude reference="N6E-Ix-jzf"/>
+                                <exclude reference="ade-Yo-wa9"/>
+                                <exclude reference="juR-Aa-VEa"/>
                                 <exclude reference="0Xh-BP-l49"/>
                                 <exclude reference="geK-W4-WPn"/>
                                 <exclude reference="jyz-h1-rtf"/>
                                 <exclude reference="p3l-GV-6kl"/>
                                 <exclude reference="qnh-rk-Wu6"/>
-                                <exclude reference="N6E-Ix-jzf"/>
-                                <exclude reference="ade-Yo-wa9"/>
-                                <exclude reference="juR-Aa-VEa"/>
-                                <exclude reference="SlY-XK-EjJ"/>
-                                <exclude reference="w75-zU-mle"/>
-                                <exclude reference="dQh-Xl-HAN"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -241,17 +241,17 @@
                                 <include reference="AuA-SX-WAB"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="dQh-Xl-HAN"/>
+                                <include reference="SlY-XK-EjJ"/>
+                                <include reference="w75-zU-mle"/>
+                                <include reference="N6E-Ix-jzf"/>
+                                <include reference="ade-Yo-wa9"/>
+                                <include reference="juR-Aa-VEa"/>
                                 <include reference="0Xh-BP-l49"/>
                                 <include reference="geK-W4-WPn"/>
                                 <include reference="jyz-h1-rtf"/>
                                 <include reference="p3l-GV-6kl"/>
                                 <include reference="qnh-rk-Wu6"/>
-                                <include reference="N6E-Ix-jzf"/>
-                                <include reference="ade-Yo-wa9"/>
-                                <include reference="juR-Aa-VEa"/>
-                                <include reference="SlY-XK-EjJ"/>
-                                <include reference="w75-zU-mle"/>
-                                <include reference="dQh-Xl-HAN"/>
                             </mask>
                         </variation>
                     </view>

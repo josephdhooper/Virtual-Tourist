@@ -53,19 +53,22 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+    
+        let itemWidth = floor((collectionView.frame.size.width - 1)/3)
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        layout.minimumLineSpacing = 2
-        layout.minimumInteritemSpacing = 2
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
         
-        let width = floor(self.collectionView.frame.size.width/3) - layout.minimumLineSpacing
-        layout.itemSize = CGSize(width: width, height: width)
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         
+//        collectionView.reloadData()
         collectionView.collectionViewLayout = layout
+        collectionView.reloadData()
+
         
     }
-    
+
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: "Photo")
         fetchRequest.sortDescriptors = []
