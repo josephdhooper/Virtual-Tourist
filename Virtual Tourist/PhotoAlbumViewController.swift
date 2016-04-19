@@ -68,6 +68,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
 
         
     }
+    
 
     lazy var fetchedResultsController: NSFetchedResultsController = {
         let fetchRequest = NSFetchRequest(entityName: "Photo")
@@ -90,7 +91,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
         else {
             cell.activityIndicator.startAnimating()
             cell.imageView.hidden = true
-            FlickrClient.sharedInstance().getImage(photo.imageUrl) {
+            FlickrClient.sharedInstance.getImage(photo.imageUrl) {
                 (imageData, error) in
                 if let downloadError = error {
                     print("download image error: \(downloadError)")
@@ -129,7 +130,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
     
     func loadPhoto() {
         bottomButton.enabled = false
-        FlickrClient.sharedInstance().getPhotos(pin!.latitude, longitude: pin!.longitude) {
+        FlickrClient.sharedInstance.getPhotos(pin!.latitude, longitude: pin!.longitude) {
             (result, error) in
             if (error != nil) {
                 self.showError("error downloading photos: \(error)")

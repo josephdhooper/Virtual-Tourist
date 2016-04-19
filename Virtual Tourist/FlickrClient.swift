@@ -10,6 +10,9 @@ import Foundation
 
 class FlickrClient : NSObject {
     
+    static let sharedInstance  = FlickrClient()
+    private override init() { }
+
     func getPhotos(latitude: Double, longitude: Double, completionHandler: (result: AnyObject!, error: String?)->Void) {
         let methodArguments = [
             "method": Constants.METHOD_NAME,
@@ -161,13 +164,13 @@ class FlickrClient : NSObject {
         task.resume()
     }
     
-    class func sharedInstance() -> FlickrClient {
-        struct Singleton {
-            static var sharedInstance = FlickrClient()
-        }
-        return Singleton.sharedInstance
-    }
-    
+//    class func sharedInstance() -> FlickrClient {
+//        struct Singleton {
+//            static var sharedInstance = FlickrClient()
+//        }
+//        return Singleton.sharedInstance
+
+
     func createBoundingBoxString(latitude: Double, longitude: Double) -> String {
         let bottom_left_lon = max(longitude - Parameters.BOUNDING_BOX_HALF_WIDTH, Parameters.LON_MIN)
         let bottom_left_lat = max(latitude - Parameters.BOUNDING_BOX_HALF_HEIGHT, Parameters.LAT_MIN)

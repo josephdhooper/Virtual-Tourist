@@ -11,6 +11,7 @@ import MapKit
 import CoreData
 
 class TravelLocationsViewController: UIViewController, MKMapViewDelegate {
+
     
     @IBOutlet weak var mapView: MKMapView!
 
@@ -97,7 +98,7 @@ class TravelLocationsViewController: UIViewController, MKMapViewDelegate {
     }
 
     func downloadPhotos(pin: Pin) {
-        FlickrClient.sharedInstance().getPhotos(pin.latitude, longitude: pin.longitude) {
+        FlickrClient.sharedInstance.getPhotos(pin.latitude, longitude: pin.longitude) {
             (result, error) in
             if (error != nil) {
                 self.showError("download photos error: \(error)")
