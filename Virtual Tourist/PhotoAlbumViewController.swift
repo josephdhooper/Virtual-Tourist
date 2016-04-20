@@ -58,7 +58,6 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        
         let itemWidth = floor((collectionView.frame.size.width - 1)/3)
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -69,7 +68,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
         
         collectionView.reloadData()
         collectionView.collectionViewLayout = layout
-    
+
     }
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
@@ -89,6 +88,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
         if photo.photoImage != nil {
             cell.imageView.hidden = false
             cell.imageView.image = photo.photoImage
+
         }
         else {
             cell.activityIndicator.startAnimating()
@@ -104,7 +104,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
                             cell.imageView.hidden = false
                             cell.imageView.image = image
                             cell.activityIndicator.stopAnimating()
-                            
+                         
                             photo.photoImage = image
                         }
                     }

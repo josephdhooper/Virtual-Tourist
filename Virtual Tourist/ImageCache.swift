@@ -9,7 +9,7 @@ import UIKit
 
 class ImageCache {
     
-    // Code for ImageCache was repurposed from "Favorite Actors" app, created by Jason Parkes and distributed by Udacity.
+    // Code for ImageCache was repurposed from "Favorite Actors" app, created by Jason Schatz and distributed by Udacity.
     
     private var inMemoryCache = NSCache()
 
