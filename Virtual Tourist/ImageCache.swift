@@ -34,7 +34,7 @@ let path = pathForIdentifier(identifier!)
 }
 
     func storeImage(image: UIImage?, withIdentifier identifier: String) {
-        print("Caching photo")
+        print("Caching photo.")
         let path = pathForIdentifier(identifier)
         
         // If the image is nil, remove images from the cache
@@ -65,34 +65,4 @@ let path = pathForIdentifier(identifier!)
         return fullURL.path!
     }
 }
-
     
-//    func imageWithPath(path: String) -> UIImage? {
-//            if let image = inMemoryCache.objectForKey(path) as? UIImage {
-//            return image
-//        }
-//        
-//        if let data = NSData(contentsOfFile: path) {
-//            return UIImage(data: data)
-//        }
-//        
-//        return nil
-//    }
-//    
-//    func storeImage(image: UIImage?, withPath path: String) {
-//        if image == nil {
-//            inMemoryCache.removeObjectForKey(path)
-//            
-//            do {
-//                try NSFileManager.defaultManager().removeItemAtPath(path)
-//            } catch _ {}
-//            
-//            return
-//        }
-//        
-//        inMemoryCache.setObject(image!, forKey: path)
-//        
-//        let data = UIImagePNGRepresentation(image!)!
-//        data.writeToFile(path, atomically: true)
-//    }
-//}

@@ -28,11 +28,7 @@ class Photo : NSManagedObject {
         imageUrl = dictionary[Keys.Url] as! String
         localPath = pathForIdentifier(id)
     }
-    
-    override func prepareForDeletion() {
-        FlickrClient.Caches.imageCache.storeImage(nil, withIdentifier: localPath)
-    }
-    
+
     var photoImage: UIImage? {
         get {
             return FlickrClient.Caches.imageCache.imageWithIdentifier(id)
@@ -64,4 +60,15 @@ class Photo : NSManagedObject {
         
         return fullURL.path!
     }
-}
+    
+// Code repurposed from https://github.com/yxiong/udacity-ios-developer-workout-log. 
+    
+    override func prepareForDeletion() {
+            let fileManager = NSFileManager()
+            do {
+                try fileManager.removeItemAtPath(localPath)
+            } catch {}
+        }
+    }
+
+
