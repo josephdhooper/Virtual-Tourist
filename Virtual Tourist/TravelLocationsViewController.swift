@@ -4,7 +4,7 @@
 //
 //  Created by Joseph Hooper on 4/14/16.
 //  Copyright © 2016 josephdhooper. All rights reserved.
-//  Code from https://github.com/jarrodparkes/virtual-tourist.git and other Udacity-focused repositories was repurposed for this project.
+//  Code from https://github.com/jarrodparkes/virtual-tourist.git and https://github.com/udacity/ios-persistence-2.0
 
 import UIKit
 import MapKit
@@ -14,6 +14,7 @@ class TravelLocationsViewController: UIViewController, MKMapViewDelegate {
 
     
     @IBOutlet weak var mapView: MKMapView!
+//    @IBOutlet weak var editButton: UIBarButtonItem!
 
     
     var droppedPin : PinAnnotation?
@@ -22,6 +23,8 @@ class TravelLocationsViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         mapView.delegate = self
+        
+
         
         let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(TravelLocationsViewController.handleLongPress(_:)))
         recognizer.minimumPressDuration = 1
@@ -155,4 +158,6 @@ class TravelLocationsViewController: UIViewController, MKMapViewDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
-}
+    
+    }
+

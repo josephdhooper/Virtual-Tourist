@@ -4,19 +4,21 @@
 //
 //  Created by Joseph Hooper on 4/14/16.
 //  Copyright © 2016 josephdhooper. All rights reserved.
-//  Code from https://github.com/jarrodparkes/virtual-tourist.git and other Udacity-focused repositories was repurposed for this project.
+//  Code from https://github.com/jarrodparkes/virtual-tourist.git and https://github.com/udacity/ios-persistence-2.0
 
 import UIKit
 import MapKit
 import CoreData
+import CoreLocation
 
-class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
+class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var bottomButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var pin : Pin!
+    
     
     var selectedIndexes = [NSIndexPath]()
     var insertedIndexPaths: [NSIndexPath]!
@@ -27,11 +29,10 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+    
         let annotation = MKPointAnnotation()
         annotation.coordinate = pin!.getCoordinate()
-        let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let region = MKCoordinateRegionMake(pin!.getCoordinate(), span)
         mapView.addAnnotation(annotation)
         mapView.setRegion(region, animated: true)
@@ -48,6 +49,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
             print(documentsPath)
         }
     }
+
     
     override func viewWillAppear(animated: Bool) {
         if (pin.photos.isEmpty) {
@@ -60,7 +62,7 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
         
         let itemWidth = floor((collectionView.frame.size.width - 1)/3)
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 0)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
         
@@ -68,7 +70,6 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
         
         collectionView.reloadData()
         collectionView.collectionViewLayout = layout
-
     }
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
@@ -142,8 +143,10 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
                     let photos = Photo.photosFromResult(result, context: self.sharedContext)
                     for photo in photos {
                         photo.pin = self.pin
+                        
                     }
                     CoreDataStackManager.sharedInstance().saveContext()
+                    
                     
                     
                 }
@@ -218,8 +221,8 @@ class PhotoAlbumViewController: UIViewController, UICollectionViewDataSource, UI
         case .Move:
             print("Move an item. We don't expect to see this in this app.")
             break
-//        default:
-//            break
+        default:
+            break
         }
     }
     

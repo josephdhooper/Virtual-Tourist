@@ -4,7 +4,8 @@
 //
 //  Created by Joseph Hooper on 4/14/16.
 //  Copyright © 2016 josephdhooper. All rights reserved.
-//  Code from https://github.com/jarrodparkes/virtual-tourist.git . 
+//  Code from https://github.com/jarrodparkes/virtual-tourist.git and https://github.com/udacity/ios-persistence-2.0
+
 import UIKit
 
 class ImageCache {
