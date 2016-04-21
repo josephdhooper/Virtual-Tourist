@@ -121,7 +121,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RJ-tC-Whh" userLabel="PlaceHolder">
@@ -142,55 +142,56 @@
                                             <constraint firstItem="9RJ-tC-Whh" firstAttribute="leading" secondItem="5vS-wN-TME" secondAttribute="leading" id="1YS-u9-zED"/>
                                             <constraint firstAttribute="trailing" secondItem="9RJ-tC-Whh" secondAttribute="trailing" id="2Q6-Ja-Rhc"/>
                                             <constraint firstItem="9RJ-tC-Whh" firstAttribute="trailing" secondItem="Re1-7q-mtg" secondAttribute="trailing" id="7Wn-o2-gDl"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="centerX" secondItem="5vS-wN-TME" secondAttribute="centerX" id="9yd-Ai-3RZ"/>
                                             <constraint firstAttribute="bottom" secondItem="9RJ-tC-Whh" secondAttribute="bottom" id="AkK-Eq-gCf"/>
+                                            <constraint firstItem="Re1-7q-mtg" firstAttribute="centerX" secondItem="5vS-wN-TME" secondAttribute="centerX" id="BN3-vC-zk2"/>
+                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerX" secondItem="5vS-wN-TME" secondAttribute="centerX" id="CN4-oa-xYC"/>
                                             <constraint firstItem="9RJ-tC-Whh" firstAttribute="centerY" secondItem="5vS-wN-TME" secondAttribute="centerY" id="DiG-U5-TRI"/>
                                             <constraint firstItem="9RJ-tC-Whh" firstAttribute="top" secondItem="Re1-7q-mtg" secondAttribute="top" id="E5P-Hc-Zsg"/>
-                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="bottom" secondItem="Re1-7q-mtg" secondAttribute="bottom" id="FzH-A2-I5x"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="bottom" secondItem="Re1-7q-mtg" secondAttribute="bottom" id="FzH-A2-I5x">
+                                                <variation key="widthClass=compact" constant="0.0"/>
+                                            </constraint>
                                             <constraint firstItem="9RJ-tC-Whh" firstAttribute="centerX" secondItem="5vS-wN-TME" secondAttribute="centerX" id="GaB-CP-FRI"/>
-                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerY" secondItem="Re1-7q-mtg" secondAttribute="centerY" id="KQ5-w7-xaF"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="centerY" secondItem="5vS-wN-TME" secondAttribute="centerY" id="YO4-cx-cBM"/>
                                             <constraint firstItem="9RJ-tC-Whh" firstAttribute="top" secondItem="5vS-wN-TME" secondAttribute="top" id="jTB-un-oPS"/>
-                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerX" secondItem="Re1-7q-mtg" secondAttribute="centerX" id="jrX-3f-rCv"/>
+                                            <constraint firstItem="NpU-bf-sei" firstAttribute="centerY" secondItem="5vS-wN-TME" secondAttribute="centerY" id="rJ0-sB-MCE"/>
                                         </constraints>
                                         <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="9RJ-tC-Whh"/>
-                                                <exclude reference="NpU-bf-sei"/>
-                                                <exclude reference="Re1-7q-mtg"/>
-                                            </mask>
                                             <mask key="constraints">
-                                                <exclude reference="KQ5-w7-xaF"/>
-                                                <exclude reference="jrX-3f-rCv"/>
                                                 <exclude reference="0bO-mb-ReY"/>
                                                 <exclude reference="1YS-u9-zED"/>
                                                 <exclude reference="2Q6-Ja-Rhc"/>
                                                 <exclude reference="7Wn-o2-gDl"/>
+                                                <exclude reference="9yd-Ai-3RZ"/>
                                                 <exclude reference="AkK-Eq-gCf"/>
                                                 <exclude reference="DiG-U5-TRI"/>
                                                 <exclude reference="E5P-Hc-Zsg"/>
                                                 <exclude reference="FzH-A2-I5x"/>
                                                 <exclude reference="GaB-CP-FRI"/>
+                                                <exclude reference="YO4-cx-cBM"/>
                                                 <exclude reference="jTB-un-oPS"/>
+                                                <exclude reference="BN3-vC-zk2"/>
+                                                <exclude reference="CN4-oa-xYC"/>
+                                                <exclude reference="rJ0-sB-MCE"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
-                                            <mask key="subviews">
-                                                <include reference="9RJ-tC-Whh"/>
-                                                <include reference="NpU-bf-sei"/>
-                                                <include reference="Re1-7q-mtg"/>
-                                            </mask>
                                             <mask key="constraints">
-                                                <include reference="KQ5-w7-xaF"/>
-                                                <include reference="jrX-3f-rCv"/>
                                                 <include reference="0bO-mb-ReY"/>
                                                 <include reference="1YS-u9-zED"/>
                                                 <include reference="2Q6-Ja-Rhc"/>
                                                 <include reference="7Wn-o2-gDl"/>
+                                                <include reference="9yd-Ai-3RZ"/>
                                                 <include reference="AkK-Eq-gCf"/>
                                                 <include reference="DiG-U5-TRI"/>
                                                 <include reference="E5P-Hc-Zsg"/>
                                                 <include reference="FzH-A2-I5x"/>
                                                 <include reference="GaB-CP-FRI"/>
+                                                <include reference="YO4-cx-cBM"/>
                                                 <include reference="jTB-un-oPS"/>
+                                                <include reference="BN3-vC-zk2"/>
+                                                <include reference="CN4-oa-xYC"/>
+                                                <include reference="rJ0-sB-MCE"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -236,8 +237,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="lLF-Og-AWY"/>
-                                <exclude reference="I5r-cc-2ay"/>
                                 <exclude reference="AuA-SX-WAB"/>
                             </mask>
                             <mask key="constraints">
@@ -256,8 +255,6 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="lLF-Og-AWY"/>
-                                <include reference="I5r-cc-2ay"/>
                                 <include reference="AuA-SX-WAB"/>
                             </mask>
                             <mask key="constraints">
