@@ -24,7 +24,7 @@
         <!--Virtual Tourist-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TravelLocationsViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Virtual_Tourist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -72,7 +72,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="hEc-kt-YMj" id="SnN-Jc-DaD"/>
-                        <segue destination="QOb-Xg-BJw" kind="show" identifier="photoAlbumSegue" id="LGZ-79-zVy"/>
+                        <segue destination="QOb-Xg-BJw" kind="show" identifier="photoAlbum" id="LGZ-79-zVy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -110,7 +110,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-cc-2ay">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="3Rq-9l-utD">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Rq-9l-utD">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -121,14 +121,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9RJ-tC-Whh" userLabel="PlaceHolder">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NpU-bf-sei">
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NpU-bf-sei">
                                                     <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                                 </activityIndicatorView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Re1-7q-mtg">
@@ -138,34 +138,38 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="trailing" secondItem="Re1-7q-mtg" secondAttribute="trailing" id="2hy-cP-RYQ"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="leading" secondItem="Re1-7q-mtg" secondAttribute="leading" id="0bO-mb-ReY"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="leading" secondItem="5vS-wN-TME" secondAttribute="leading" id="1YS-u9-zED"/>
+                                            <constraint firstAttribute="trailing" secondItem="9RJ-tC-Whh" secondAttribute="trailing" id="2Q6-Ja-Rhc"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="trailing" secondItem="Re1-7q-mtg" secondAttribute="trailing" id="7Wn-o2-gDl"/>
+                                            <constraint firstAttribute="bottom" secondItem="9RJ-tC-Whh" secondAttribute="bottom" id="AkK-Eq-gCf"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="centerY" secondItem="5vS-wN-TME" secondAttribute="centerY" id="DiG-U5-TRI"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="top" secondItem="Re1-7q-mtg" secondAttribute="top" id="E5P-Hc-Zsg"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="bottom" secondItem="Re1-7q-mtg" secondAttribute="bottom" id="FzH-A2-I5x"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="centerX" secondItem="5vS-wN-TME" secondAttribute="centerX" id="GaB-CP-FRI"/>
                                             <constraint firstItem="NpU-bf-sei" firstAttribute="centerY" secondItem="Re1-7q-mtg" secondAttribute="centerY" id="KQ5-w7-xaF"/>
-                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="leading" secondItem="5vS-wN-TME" secondAttribute="leading" id="O1s-kW-aMO"/>
-                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="leading" secondItem="Re1-7q-mtg" secondAttribute="leading" id="VsK-Ne-g3L"/>
-                                            <constraint firstAttribute="trailing" secondItem="9RJ-tC-Whh" secondAttribute="trailing" id="ft8-gS-wVf"/>
-                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="bottom" secondItem="Re1-7q-mtg" secondAttribute="bottom" id="j3i-Tq-a6T"/>
+                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="top" secondItem="5vS-wN-TME" secondAttribute="top" id="jTB-un-oPS"/>
                                             <constraint firstItem="NpU-bf-sei" firstAttribute="centerX" secondItem="Re1-7q-mtg" secondAttribute="centerX" id="jrX-3f-rCv"/>
-                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="top" secondItem="Re1-7q-mtg" secondAttribute="top" id="rOI-jo-QFE"/>
-                                            <constraint firstItem="9RJ-tC-Whh" firstAttribute="top" secondItem="5vS-wN-TME" secondAttribute="top" id="u7K-Dg-wXM"/>
-                                            <constraint firstAttribute="bottom" secondItem="9RJ-tC-Whh" secondAttribute="bottom" id="yOh-2i-8Vw"/>
                                         </constraints>
-                                        <size key="customSize" width="100" height="100"/>
                                         <variation key="default">
                                             <mask key="subviews">
                                                 <exclude reference="9RJ-tC-Whh"/>
+                                                <exclude reference="NpU-bf-sei"/>
                                                 <exclude reference="Re1-7q-mtg"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="2hy-cP-RYQ"/>
-                                                <exclude reference="O1s-kW-aMO"/>
-                                                <exclude reference="VsK-Ne-g3L"/>
-                                                <exclude reference="ft8-gS-wVf"/>
-                                                <exclude reference="j3i-Tq-a6T"/>
-                                                <exclude reference="rOI-jo-QFE"/>
-                                                <exclude reference="u7K-Dg-wXM"/>
-                                                <exclude reference="yOh-2i-8Vw"/>
                                                 <exclude reference="KQ5-w7-xaF"/>
                                                 <exclude reference="jrX-3f-rCv"/>
+                                                <exclude reference="0bO-mb-ReY"/>
+                                                <exclude reference="1YS-u9-zED"/>
+                                                <exclude reference="2Q6-Ja-Rhc"/>
+                                                <exclude reference="7Wn-o2-gDl"/>
+                                                <exclude reference="AkK-Eq-gCf"/>
+                                                <exclude reference="DiG-U5-TRI"/>
+                                                <exclude reference="E5P-Hc-Zsg"/>
+                                                <exclude reference="FzH-A2-I5x"/>
+                                                <exclude reference="GaB-CP-FRI"/>
+                                                <exclude reference="jTB-un-oPS"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -175,16 +179,18 @@
                                                 <include reference="Re1-7q-mtg"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="2hy-cP-RYQ"/>
-                                                <include reference="O1s-kW-aMO"/>
-                                                <include reference="VsK-Ne-g3L"/>
-                                                <include reference="ft8-gS-wVf"/>
-                                                <include reference="j3i-Tq-a6T"/>
-                                                <include reference="rOI-jo-QFE"/>
-                                                <include reference="u7K-Dg-wXM"/>
-                                                <include reference="yOh-2i-8Vw"/>
                                                 <include reference="KQ5-w7-xaF"/>
                                                 <include reference="jrX-3f-rCv"/>
+                                                <include reference="0bO-mb-ReY"/>
+                                                <include reference="1YS-u9-zED"/>
+                                                <include reference="2Q6-Ja-Rhc"/>
+                                                <include reference="7Wn-o2-gDl"/>
+                                                <include reference="AkK-Eq-gCf"/>
+                                                <include reference="DiG-U5-TRI"/>
+                                                <include reference="E5P-Hc-Zsg"/>
+                                                <include reference="FzH-A2-I5x"/>
+                                                <include reference="GaB-CP-FRI"/>
+                                                <include reference="jTB-un-oPS"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -235,6 +241,10 @@
                                 <exclude reference="AuA-SX-WAB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="dQh-Xl-HAN"/>
+                                <exclude reference="jWB-m0-eOc"/>
+                                <exclude reference="w75-zU-mle"/>
+                                <exclude reference="eP7-Mc-dgz"/>
                                 <exclude reference="1as-ej-Jie"/>
                                 <exclude reference="1vS-uW-hJe"/>
                                 <exclude reference="3GI-FN-rgz"/>
@@ -242,10 +252,6 @@
                                 <exclude reference="F4m-gM-V21"/>
                                 <exclude reference="eph-3N-fNw"/>
                                 <exclude reference="iyM-3B-izR"/>
-                                <exclude reference="eP7-Mc-dgz"/>
-                                <exclude reference="jWB-m0-eOc"/>
-                                <exclude reference="w75-zU-mle"/>
-                                <exclude reference="dQh-Xl-HAN"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -255,6 +261,10 @@
                                 <include reference="AuA-SX-WAB"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="dQh-Xl-HAN"/>
+                                <include reference="jWB-m0-eOc"/>
+                                <exclude reference="w75-zU-mle"/>
+                                <include reference="eP7-Mc-dgz"/>
                                 <include reference="1as-ej-Jie"/>
                                 <include reference="1vS-uW-hJe"/>
                                 <include reference="3GI-FN-rgz"/>
@@ -262,10 +272,6 @@
                                 <include reference="F4m-gM-V21"/>
                                 <include reference="eph-3N-fNw"/>
                                 <include reference="iyM-3B-izR"/>
-                                <include reference="eP7-Mc-dgz"/>
-                                <include reference="jWB-m0-eOc"/>
-                                <exclude reference="w75-zU-mle"/>
-                                <include reference="dQh-Xl-HAN"/>
                             </mask>
                         </variation>
                     </view>

@@ -56,20 +56,20 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
             loadPhoto()
         }
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+
         let itemWidth = floor((collectionView.frame.size.width - 1)/3)
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 1, right: 0)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
-        
+
         layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
-        
         collectionView.reloadData()
         collectionView.collectionViewLayout = layout
+
     }
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
@@ -85,6 +85,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
     
     func configureCell(cell: PhotoCell, atIndexPath indexPath: NSIndexPath) {
         let photo = fetchedResultsController.objectAtIndexPath(indexPath) as! Photo
+        
         
         if photo.photoImage != nil {
             cell.imageView.hidden = false
@@ -123,11 +124,13 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
     @IBAction func bottomButtonTouch(sender: AnyObject) {
         
         if selectedIndexes.count > 0 {
+            
             deleteSelectedItems()
         }
         else {
             deleteAllPhotos()
             loadPhoto()
+            
         }
     }
     
@@ -146,8 +149,6 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
                         
                     }
                     CoreDataStackManager.sharedInstance().saveContext()
-                    
-                    
                     
                 }
                 
@@ -183,6 +184,7 @@ class PhotoAlbumViewController: UIViewController, MKMapViewDelegate, UICollectio
         configureCell(cell, atIndexPath: indexPath)
         
         updateBottomButton()
+        
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

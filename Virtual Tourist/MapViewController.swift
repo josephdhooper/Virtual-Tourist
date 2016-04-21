@@ -1,5 +1,5 @@
 //
-//  TravelLocationsViewController.swift
+//  MapViewController.swift
 //  Virtual Tourist
 //
 //  Created by Joseph Hooper on 4/14/16.
@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreData
 
-class TravelLocationsViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     
     @IBOutlet weak var mapView: MKMapView!
@@ -26,7 +26,7 @@ class TravelLocationsViewController: UIViewController, MKMapViewDelegate {
         
 
         
-        let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(TravelLocationsViewController.handleLongPress(_:)))
+        let recognizer = UILongPressGestureRecognizer(target: self, action: #selector(MapViewController.handleLongPress(_:)))
         recognizer.minimumPressDuration = 1
         mapView.addGestureRecognizer(recognizer)
         

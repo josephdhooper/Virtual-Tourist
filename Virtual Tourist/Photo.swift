@@ -67,7 +67,10 @@ class Photo : NSManagedObject {
             let fileManager = NSFileManager()
             do {
                 try fileManager.removeItemAtPath(localPath)
-            } catch {}
+            } catch {
+        
+        }
+        
         }
     }
 
